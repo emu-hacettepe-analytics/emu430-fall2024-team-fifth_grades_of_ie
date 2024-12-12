@@ -16,8 +16,29 @@
   {
     "objectID": "data.html",
     "href": "data.html",
-    "title": "Data",
+    "title": "DATA",
     "section": "",
-    "text": "Data source: xxx\n\n\n\n Back to top"
+    "text": "The dataset below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This dataset offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.\nData Source: Ekonomik Güven Endeksi, TÜİK"
+  },
+  {
+    "objectID": "data.html#what-is-the-data-about",
+    "href": "data.html#what-is-the-data-about",
+    "title": "DATA",
+    "section": "",
+    "text": "The dataset below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This dataset offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.\nData Source: Ekonomik Güven Endeksi, TÜİK"
+  },
+  {
+    "objectID": "data.html#reasons-for-the-selection-of-this-dataset",
+    "href": "data.html#reasons-for-the-selection-of-this-dataset",
+    "title": "DATA",
+    "section": "Reasons for the Selection of This Dataset",
+    "text": "Reasons for the Selection of This Dataset\nWe selected that dataset because it is very convenient for sustaining the dynamics of the Turkish economy. Confidence indices in the dataset provide an important indicator of the fluctuations that the Turkish economy has experienced in recent years and the developments in different sectors. Also, it is large enough to use and perform analysis to get reliable results."
+  },
+  {
+    "objectID": "data.html#objectives-and-plans",
+    "href": "data.html#objectives-and-plans",
+    "title": "DATA",
+    "section": "Objectives and Plans",
+    "text": "Objectives and Plans\nOur main focus is getting economic insights by analyzing Türkiye’s economic confidence index and sub-indices. We will follow two main analysis in our project:\n\nTime Series Analysis\n\nObjective: To examine how the Economic Confidence Index and its sub-indices have changed over the years and months.\nMethod:\n\nLine Charts: Visualize the trend of each index over time.\nSeasonal Analysis: Identify any recurring patterns in the indices monthly.\nYearly Comparisons: Analyze the increases or decreases on an annual basis.\n\n\nComparison of Sub-Indices\n\nObjective: To identify how the Consumer, Real Sector, Services, Retail Trade, and Construction Confidence Indices differ from each other.\nMethod:\n\nCorrelation Analysis: Measure the relationships between the sub-indices.\nBar Charts: Visualize comparative representations of indices for specific years.\n\n\n\nTime series analysis and comparison of sub-indices can provide significant insights into economic confidence. Through time series analysis, long-term trends, seasonal effects, and the impact of economic events on the indices can be identified; for instance, sudden declines during crises or increases during periods of growth may become evident. This analysis can reveal periods of greater stability or volatility in economic confidence through yearly comparisons. Comparing sub-indices allows for examining relationships, correlations, and differences across sectors. For example, insights can be gained on the alignment between consumer confidence and real sector confidence or the sensitivity of the construction sector to economic fluctuations. These analyses support a better understanding of economic health, the development of policy recommendations, and the optimization of investment strategies. In particular, examining the trends of indices over time and the dynamics between sectors can deliver valuable insights to guide economic decision-making processes."
   }
 ]
