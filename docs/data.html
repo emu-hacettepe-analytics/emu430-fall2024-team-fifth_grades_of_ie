@@ -122,6 +122,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-is-the-data-about" id="toc-what-is-the-data-about" class="nav-link active" data-scroll-target="#what-is-the-data-about">What is the Data About?</a></li>
   <li><a href="#reasons-for-the-selection-of-this-dataset" id="toc-reasons-for-the-selection-of-this-dataset" class="nav-link" data-scroll-target="#reasons-for-the-selection-of-this-dataset">Reasons for the Selection of This Dataset</a></li>
   <li><a href="#objectives-and-plans" id="toc-objectives-and-plans" class="nav-link" data-scroll-target="#objectives-and-plans">Objectives and Plans</a></li>
+  <li><a href="#preparing-and-importing-the-data" id="toc-preparing-and-importing-the-data" class="nav-link" data-scroll-target="#preparing-and-importing-the-data">Preparing and Importing the Data</a></li>
   </ul>
 </nav>
 </nav>
@@ -185,6 +186,21 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 <p>Time series analysis and comparison of sub-indices can provide significant insights into economic confidence. Through time series analysis, long-term trends, seasonal effects, and the impact of economic events on the indices can be identified; for instance, sudden declines during crises or increases during periods of growth may become evident. This analysis can reveal periods of greater stability or volatility in economic confidence through yearly comparisons. Comparing sub-indices allows for examining relationships, correlations, and differences across sectors. For example, insights can be gained on the alignment between consumer confidence and real sector confidence or the sensitivity of the construction sector to economic fluctuations. These analyses support a better understanding of economic health, the development of policy recommendations, and the optimization of investment strategies. In particular, examining the trends of indices over time and the dynamics between sectors can deliver valuable insights to guide economic decision-making processes.</p>
+</section>
+<section id="preparing-and-importing-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-and-importing-the-data">Preparing and Importing the Data</h2>
+<ul>
+<li>The original dataset contained irrelevant rows at the beginning, such as titles and introductory text. To prepare the data for analysis, we deleted the first three rows from the raw data.</li>
+</ul>
+<p><img src="images/clipboard-1681807496.png" class="img-fluid"></p>
+<ul>
+<li>In our analysis, we decided to focus on the economic confidence index and its sub-indices confidence indices. So we just kept the first eight columns.</li>
+</ul>
+<p><img src="images/clipboard-549082684.png" class="img-fluid"></p>
+<ul>
+<li>To clarify and tidy our dataset for importing into R, we simply copied and renamed the columns. We deleted the rows containing NA (-) values, resulting in the loss of data from 2007, 2008, 2009, and 2010. We continued our analysis with the years between 2011 and 2024.</li>
+</ul>
+<p><img src="images/clipboard-965247238.png" class="img-fluid"></p>
 
 
 </section>
