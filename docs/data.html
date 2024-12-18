@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -122,7 +156,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-is-the-data-about" id="toc-what-is-the-data-about" class="nav-link active" data-scroll-target="#what-is-the-data-about">What is the Data About?</a></li>
   <li><a href="#reasons-for-the-selection-of-this-dataset" id="toc-reasons-for-the-selection-of-this-dataset" class="nav-link" data-scroll-target="#reasons-for-the-selection-of-this-dataset">Reasons for the Selection of This Dataset</a></li>
   <li><a href="#objectives-and-plans" id="toc-objectives-and-plans" class="nav-link" data-scroll-target="#objectives-and-plans">Objectives and Plans</a></li>
-  <li><a href="#preparing-and-importing-the-data" id="toc-preparing-and-importing-the-data" class="nav-link" data-scroll-target="#preparing-and-importing-the-data">Preparing and Importing the Data</a></li>
+  <li><a href="#preparing-the-data-for-analysis" id="toc-preparing-the-data-for-analysis" class="nav-link" data-scroll-target="#preparing-the-data-for-analysis">Preparing the Data for Analysis</a></li>
+  <li><a href="#storing-the-data-in-.rdata-format" id="toc-storing-the-data-in-.rdata-format" class="nav-link" data-scroll-target="#storing-the-data-in-.rdata-format">Storing the Data in .RData format</a></li>
   </ul>
 </nav>
 </nav>
@@ -154,12 +189,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="what-is-the-data-about" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-the-data-about">What is the Data About?</h2>
-<p>The dataset below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This dataset offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.</p>
+<p>The data set below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This data set offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.</p>
 <p><strong>Data Source:</strong> <a href="https://data.tuik.gov.tr/Bulten/Index?p=Ekonomik-Guven-Endeksi-Ekim-2024-53597">Ekonomik Güven Endeksi, TÜİK</a></p>
 </section>
 <section id="reasons-for-the-selection-of-this-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="reasons-for-the-selection-of-this-dataset">Reasons for the Selection of This Dataset</h2>
-<p>We selected that dataset because it is very convenient for sustaining the dynamics of the Turkish economy. Confidence indices in the dataset provide an important indicator of the fluctuations that the Turkish economy has experienced in recent years and the developments in different sectors. Also, it is large enough to use and perform analysis to get reliable results.</p>
+<p>We selected that data set because it is very convenient for sustaining the dynamics of the Turkish economy. Confidence indices in the data set provide an important indicator of the fluctuations that the Turkish economy has experienced in recent years and the developments in different sectors. Also, it is large enough to use and perform analysis to get reliable results.</p>
 </section>
 <section id="objectives-and-plans" class="level2">
 <h2 class="anchored" data-anchor-id="objectives-and-plans">Objectives and Plans</h2>
@@ -187,10 +222,10 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Time series analysis and comparison of sub-indices can provide significant insights into economic confidence. Through time series analysis, long-term trends, seasonal effects, and the impact of economic events on the indices can be identified; for instance, sudden declines during crises or increases during periods of growth may become evident. This analysis can reveal periods of greater stability or volatility in economic confidence through yearly comparisons. Comparing sub-indices allows for examining relationships, correlations, and differences across sectors. For example, insights can be gained on the alignment between consumer confidence and real sector confidence or the sensitivity of the construction sector to economic fluctuations. These analyses support a better understanding of economic health, the development of policy recommendations, and the optimization of investment strategies. In particular, examining the trends of indices over time and the dynamics between sectors can deliver valuable insights to guide economic decision-making processes.</p>
 </section>
-<section id="preparing-and-importing-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="preparing-and-importing-the-data">Preparing and Importing the Data</h2>
+<section id="preparing-the-data-for-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-the-data-for-analysis">Preparing the Data for Analysis</h2>
 <ul>
-<li>The original dataset contained irrelevant rows at the beginning, such as titles and introductory text. To prepare the data for analysis, we deleted the first three rows from the raw data.</li>
+<li>The original data set contained irrelevant rows at the beginning, such as titles and introductory text. To prepare the data for analysis, we deleted the first three rows from the raw data.</li>
 </ul>
 <p><img src="images/clipboard-1681807496.png" class="img-fluid"></p>
 <ul>
@@ -198,9 +233,20 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><img src="images/clipboard-549082684.png" class="img-fluid"></p>
 <ul>
-<li>To clarify and tidy our dataset for importing into R, we simply copied and renamed the columns. We deleted the rows containing NA (-) values, resulting in the loss of data from 2007, 2008, 2009, and 2010. We continued our analysis with the years between 2011 and 2024.</li>
+<li>To clarify and tidy our data set for importing into R, we simply copied and renamed the columns. We deleted the rows containing NA (-) values, resulting in the loss of data from 2007, 2008, 2009, and 2010. We continued our analysis with the years between 2011 and 2024.</li>
 </ul>
 <p><img src="images/clipboard-965247238.png" class="img-fluid"></p>
+</section>
+<section id="storing-the-data-in-.rdata-format" class="level2">
+<h2 class="anchored" data-anchor-id="storing-the-data-in-.rdata-format">Storing the Data in .RData format</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.4.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tidy_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Cleaned_Economic_Confidence_Index_Dataset.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(tidy_data, <span class="at">file =</span> <span class="st">"Cleaned_Economic_Confidence_Index_Dataset.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

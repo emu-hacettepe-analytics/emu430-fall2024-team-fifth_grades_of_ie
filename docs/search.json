@@ -18,21 +18,21 @@
     "href": "data.html",
     "title": "DATA",
     "section": "",
-    "text": "The dataset below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This dataset offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.\nData Source: Ekonomik Güven Endeksi, TÜİK"
+    "text": "The data set below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This data set offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.\nData Source: Ekonomik Güven Endeksi, TÜİK"
   },
   {
     "objectID": "data.html#what-is-the-data-about",
     "href": "data.html#what-is-the-data-about",
     "title": "DATA",
     "section": "",
-    "text": "The dataset below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This dataset offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.\nData Source: Ekonomik Güven Endeksi, TÜİK"
+    "text": "The data set below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This data set offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.\nData Source: Ekonomik Güven Endeksi, TÜİK"
   },
   {
     "objectID": "data.html#reasons-for-the-selection-of-this-dataset",
     "href": "data.html#reasons-for-the-selection-of-this-dataset",
     "title": "DATA",
     "section": "Reasons for the Selection of This Dataset",
-    "text": "Reasons for the Selection of This Dataset\nWe selected that dataset because it is very convenient for sustaining the dynamics of the Turkish economy. Confidence indices in the dataset provide an important indicator of the fluctuations that the Turkish economy has experienced in recent years and the developments in different sectors. Also, it is large enough to use and perform analysis to get reliable results."
+    "text": "Reasons for the Selection of This Dataset\nWe selected that data set because it is very convenient for sustaining the dynamics of the Turkish economy. Confidence indices in the data set provide an important indicator of the fluctuations that the Turkish economy has experienced in recent years and the developments in different sectors. Also, it is large enough to use and perform analysis to get reliable results."
   },
   {
     "objectID": "data.html#objectives-and-plans",
@@ -47,5 +47,19 @@
     "title": "DATA",
     "section": "Preparing and Importing the Data",
     "text": "Preparing and Importing the Data\n\nThe original dataset contained irrelevant rows at the beginning, such as titles and introductory text. To prepare the data for analysis, we deleted the first three rows from the raw data.\n\n\n\nIn our analysis, we decided to focus on the economic confidence index and its sub-indices confidence indices. So we just kept the first eight columns.\n\n\n\nTo clarify and tidy our dataset for importing into R, we simply copied and renamed the columns. We deleted the rows containing NA (-) values, resulting in the loss of data from 2007, 2008, 2009, and 2010. We continued our analysis with the years between 2011 and 2024."
+  },
+  {
+    "objectID": "data.html#preparing-the-data-for-analysis",
+    "href": "data.html#preparing-the-data-for-analysis",
+    "title": "DATA",
+    "section": "Preparing the Data for Analysis",
+    "text": "Preparing the Data for Analysis\n\nThe original data set contained irrelevant rows at the beginning, such as titles and introductory text. To prepare the data for analysis, we deleted the first three rows from the raw data.\n\n\n\nIn our analysis, we decided to focus on the economic confidence index and its sub-indices confidence indices. So we just kept the first eight columns.\n\n\n\nTo clarify and tidy our data set for importing into R, we simply copied and renamed the columns. We deleted the rows containing NA (-) values, resulting in the loss of data from 2007, 2008, 2009, and 2010. We continued our analysis with the years between 2011 and 2024."
+  },
+  {
+    "objectID": "data.html#storing-the-data-in-.rdata-format",
+    "href": "data.html#storing-the-data-in-.rdata-format",
+    "title": "DATA",
+    "section": "Storing the Data in .RData format",
+    "text": "Storing the Data in .RData format\n\nlibrary(readr)\n\nWarning: package 'readr' was built under R version 4.4.2\n\ntidy_data &lt;- read.csv(\"Cleaned_Economic_Confidence_Index_Dataset.csv\")\nsave(tidy_data, file = \"Cleaned_Economic_Confidence_Index_Dataset.RData\")"
   }
 ]
