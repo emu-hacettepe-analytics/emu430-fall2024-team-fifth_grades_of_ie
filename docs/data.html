@@ -242,13 +242,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To convert the data into .RData format, we first saved the data as a .csv file. We then imported our dataset into R using the “read.csv” function from the “readr” package. After that, we used the “save” function to save our dataset in .RData format and uploaded this file to our team’s repository on GitHub.</p>
 <p><em>Check the following codes for the importing process:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readr' was built under R version 4.4.2</code></pre>
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tidy_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Cleaned_Economic_Confidence_Index_Dataset.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(tidy_data, <span class="at">file =</span> <span class="st">"Cleaned_Economic_Confidence_Index_Dataset.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tidy_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Cleaned_Economic_Confidence_Index_Dataset.csv"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(tidy_data, <span class="at">file =</span> <span class="st">"Cleaned_Economic_Confidence_Index_Dataset.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p><a href="https://github.com/emu-hacettepe-analytics/emu430-fall2024-team-fifth_grades_of_ie/raw/refs/heads/master/Cleaned_Economic_Confidence_Index_Dataset.RData" class="download-button">Click here to download the .RData Format</a></p>
 
 
 </section>
