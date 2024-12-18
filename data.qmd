@@ -54,7 +54,7 @@ Time series analysis and comparison of sub-indices can provide significant insig
 
 ![](images/clipboard-965247238.png)
 
-## Storing the Data in .RData format
+## Storing the Data in .RData Format
 
 ```{r}
 library(readr)

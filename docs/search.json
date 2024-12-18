@@ -59,7 +59,7 @@
     "objectID": "data.html#storing-the-data-in-.rdata-format",
     "href": "data.html#storing-the-data-in-.rdata-format",
     "title": "DATA",
-    "section": "Storing the Data in .RData format",
-    "text": "Storing the Data in .RData format\n\nlibrary(readr)\n\nWarning: package 'readr' was built under R version 4.4.2\n\ntidy_data &lt;- read.csv(\"Cleaned_Economic_Confidence_Index_Dataset.csv\")\nsave(tidy_data, file = \"Cleaned_Economic_Confidence_Index_Dataset.RData\")"
+    "section": "Storing the Data in .RData Format",
+    "text": "Storing the Data in .RData Format\n\nlibrary(readr)\n\nWarning: package 'readr' was built under R version 4.4.2\n\ntidy_data &lt;- read.csv(\"Cleaned_Economic_Confidence_Index_Dataset.csv\")\nsave(tidy_data, file = \"Cleaned_Economic_Confidence_Index_Dataset.RData\")"
   }
 ]
