@@ -56,6 +56,10 @@ Time series analysis and comparison of sub-indices can provide significant insig
 
 ## Storing the Data in .RData Format
 
+To convert the data into .RData format, we first saved the data as a .csv file. We then imported our dataset into R using the "read.csv" function from the "readr" package. After that, we used the "save" function to save our dataset in .RData format and uploaded this file to our team's repository on GitHub.
+
+*Check the following codes for the importing process:*
+
 ```{r}
 library(readr)
 tidy_data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")
