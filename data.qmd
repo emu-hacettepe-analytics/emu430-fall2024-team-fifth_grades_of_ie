@@ -4,13 +4,13 @@ title: "DATA"
 
 ## What is the Data About?
 
-The dataset below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This dataset offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.
+The data set below contains various economic confidence indices and sub-indices for Turkey from 2007 to 2024, including categories such as consumer, services, retail, construction, and real sector confidence indices. This data set offers an in-depth look at economic confidence levels across different sectors in Turkey, with monthly data spanning from 2007 to 2024. It includes indices for consumer confidence, real sector confidence, confidence in services, retail trade, and construction sectors. Each index reflects how people and businesses feel about their economic prospects.
 
 **Data Source:** [Ekonomik Güven Endeksi, TÜİK](https://data.tuik.gov.tr/Bulten/Index?p=Ekonomik-Guven-Endeksi-Ekim-2024-53597)
 
-## Reasons for the Selection of This Dataset
+## Reasons for the Selection of This Data Set
 
-We selected that dataset because it is very convenient for sustaining the dynamics of the Turkish economy. Confidence indices in the dataset provide an important indicator of the fluctuations that the Turkish economy has experienced in recent years and the developments in different sectors. Also, it is large enough to use and perform analysis to get reliable results.
+We selected that data set because it is very convenient for sustaining the dynamics of the Turkish economy. Confidence indices in the data set provide an important indicator of the fluctuations that the Turkish economy has experienced in recent years and the developments in different sectors. Also, it is large enough to use and perform analysis to get reliable results.
 
 ## Objectives and Plans
 

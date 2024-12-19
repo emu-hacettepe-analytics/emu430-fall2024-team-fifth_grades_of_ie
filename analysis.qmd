@@ -2,7 +2,81 @@
 title: "Analysis"
 ---
 
-About this site
+Our analysis will be be based on the data set Economic Confidence Index set published by TUIK. The ECI reflects the general sentiment towards the economy and is composed of various sectoral indices. The data set spans from 2011 January to 2024 October and provides information on the following indices:
+
+-   **Economic Confidence Index**: Represents the overall economic outlook by combining data from multiple sectors.
+
+-   **Consumer Confidence Index**: Shows how consumers perceive the current and future state of the economy, their financial situations, and their spending tendencies.
+
+-   **Real Sector Confidence Index** : Focuses on the manufacturing industry, providing insights into production levels, new orders, and business expectations.
+
+-   **Service Confidence Index**: Highlights the performance and expectations within the service sector.
+
+-   **Retail Trade Confidence Index**: Focuses on sales trends, stock levels, and business activity in retail.
+
+-   **Construction Confidence Index**: Tracks sentiment in the construction industry, including current order books and employment plans.
+
+This dataset provides a comprehensive view of the Turkish economy through sectoral lenses, making it useful for analyzing trends, comparing sector performance, and evaluating economic resilience over time.
+
+In the data set rows represent the datas of that year with the belongings month, and the columns represent the different indices explained above. The column names are: "Year", "Month", "Economic_Confidence\_ Index", "Consumer_Confidence_Index", "Real_Sector_Confidence_Index", "Services_Confidence_Index", "Retail_Trade_Confidence_Index", "Construction_Confidence_Index."
+
+In the below, you can see the distributions and value types of the datas. We found the variable type by using str() function, and distribution by using
+
+**Year, Month:**
+
+-   **Meaning**: The date when the data was recorded.
+
+-   **Variable Type**: Numeric
+
+-   **Value Distribution**: This column will contain a range of dates from 2007 to 2024, likely with monthly intervals.
+
+1.  **Economic Confidence Index (ECI)**
+
+    -   **Meaning**: The composite index that represents overall economic confidence.
+
+    -   **Variable Type**: Numeric (Continuous)
+
+    -   **Value Distribution**: Normal Distribution
+
+2.  **Consumer Confidence Index (CCI)**
+
+    -   **Meaning**: A measure of consumers' confidence about their financial situations and expectations for the economy.
+
+    -   **Variable Type**: Numeric (Continuous)
+
+    -   **Value Distribution**: Normal Distribution
+
+3.  **Real Sector Confidence Index (RSCI)**
+
+    -   **Meaning**: Reflects confidence within the real sector, such as production levels, investments, and employment trends in manufacturing.
+
+    -   **Variable Type**: Numeric (Continuous)
+
+    -   **Value Distribution**: Normal Distribution
+
+4.  **Service Confidence Index**
+
+    -   **Meaning**: Reflects the confidence in the service sector, considering factors like business activity and expectations.
+
+    -   **Variable Type**: Numeric (Continuous)
+
+    -   **Value Distribution**: Normal Distribution
+
+5.  **Retail Trade Confidence Index (RTCI)**
+
+    -   **Meaning**: Represents the sentiment in retail trade, including expectations of sales and stock levels.
+
+    -   **Variable Type**: Numeric (Continuous)
+
+    -   **Value Distribution**: Normal Distribution
+
+6.  **Construction Confidence Index (CCI)**
+
+    -   **Meaning**: Reflects confidence in the construction sector, focusing on current orders and future business activity.
+
+    -   **Variable Type**: Numeric (Continuous)
+
+    -   **Value Distribution**: Normal Distribution
 
 ```{r}
 1 + 1
