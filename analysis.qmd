@@ -4,7 +4,7 @@ title: "Analysis"
 
 
 Our analysis will be be based on the data set Economic Confidence Index set published by TUIK. The ECI reflects the general sentiment towards the economy and is composed of various sectoral indices. The dataset spans from 2011 January to 2024 October and provides information on the following indices:
-Our analysis will be be based on the data set Economic Confidence Index set published by TUIK. The ECI reflects the general sentiment towards the economy and is composed of various sectoral indices. The data set spans from 2011 January to 2024 October and provides information on the following indices:
+
 
 -   **Economic Confidence Index**: Represents the overall economic outlook by combining data from multiple sectors.
 
