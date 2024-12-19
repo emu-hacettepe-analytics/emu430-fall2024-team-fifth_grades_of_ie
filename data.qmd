@@ -8,7 +8,7 @@ The data set below contains various economic confidence indices and sub-indices 
 
 **Data Source:** [Ekonomik Güven Endeksi, TÜİK](https://data.tuik.gov.tr/Bulten/Index?p=Ekonomik-Guven-Endeksi-Ekim-2024-53597)
 
-## Reasons for the Selection of This Dataset
+## Reasons for the Selection of This Data Set
 
 We selected that data set because it is very convenient for sustaining the dynamics of the Turkish economy. Confidence indices in the data set provide an important indicator of the fluctuations that the Turkish economy has experienced in recent years and the developments in different sectors. Also, it is large enough to use and perform analysis to get reliable results.
 

@@ -5,9 +5,7 @@ sidebar: false
 
 This is our project webpage.
 
-Please stay tuned to follow our project activities.
-
-This is our template.
+You can see our project details via this webpage. Please stay tuned to follow our project activities.
 
 # Team Members
 
@@ -15,11 +13,11 @@ This is our template.
 
 2.  [İdil Tokel](https://github.com/emu-hacettepe-analytics/emu430-fall2024-idiltokel)
 
-3.  
+3.  [Bengü İrem Işık](https://github.com/emu-hacettepe-analytics/emu430-fall2024-benguiirem)
 
-4.  
+4.  [Atacan Karakaş](https://github.com/emu-hacettepe-analytics/emu430-fall2024-akarakaslab)
 
-5.  
+5.  Zeynep Sude Pirim
 
 # Project Topic
 
