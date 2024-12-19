@@ -7,19 +7,17 @@ This is our project webpage.
 
 Please stay tuned to follow our project activities.
 
-This is our template.
-
 # Team Members
 
 1.  [Gökay Aydoğan](https://github.com/emu-hacettepe-analytics/emu430-fall2024-gokay-aydogan)
 
 2.  [İdil Tokel](https://github.com/emu-hacettepe-analytics/emu430-fall2024-idiltokel)
 
-3.  
+3.  Bengü İrem Işık
 
-4.  
+4.  Atacan Karakaş
 
-5.  
+5.  Zeynep Sude Pirim
 
 # Project Topic
 
