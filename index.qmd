@@ -13,9 +13,9 @@ You can see our project details via this webpage. Please stay tuned to follow ou
 
 2.  [İdil Tokel](https://github.com/emu-hacettepe-analytics/emu430-fall2024-idiltokel)
 
-3.  [Bengü İrem Işık](emu-hacettepe-analytics/emu430-fall2024-emu430-fall2024-emu430-quarto-template)
+3.  [Bengü İrem Işık](https://github.com/emu-hacettepe-analytics/emu430-fall2024-benguiirem)
 
-4.  Atacan Karakaş
+4.  [Atacan Karakaş](https://github.com/emu-hacettepe-analytics/emu430-fall2024-akarakaslab)
 
 5.  Zeynep Sude Pirim
 
