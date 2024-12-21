@@ -95,3 +95,49 @@ ggplot(melted_data, aes(x = Month, y = Seasonal_Average)) +
 *Our methodology was primarily guided by lecture materials and DataCamp assignments, with occasional assistance from AI tools. We annotated sections of code where AI provided input with the comment "\~ AI \~" for transparency.*
 
 ### Yearly Comparisons
+
+```{r message=FALSE, warning=FALSE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+# Load necessary libraries
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+# Import the dataset
+data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")
+
+# Exclude 'Year' and 'Month' columns (~ AI ~)
+columns_to_analyze <- setdiff(names(data), c("Year", "Month"))
+
+# Perform yearly analysis for all columns except 'Year' and 'Month'
+yearly_analysis <- data %>%
+  group_by(Year) %>%
+  summarise(across(all_of(columns_to_analyze), ~ mean(.x, na.rm = TRUE)))
+
+# Reshape the data for faceted plotting
+melted_data <- yearly_analysis %>%
+  pivot_longer(cols = -Year, names_to = "Index", values_to = "Yearly_Average")
+
+# Set the order of facets to match the order in the Excel file (~ AI ~)
+melted_data$Index <- factor(melted_data$Index, levels = columns_to_analyze)
+
+# Plot using faceting with vertical x-axis labels for yearly analysis
+ggplot(melted_data, aes(x = Year, y = Yearly_Average)) +
+  geom_line(aes(group = Index), color = "blue") +
+  geom_point(color = "red") +
+  facet_wrap(~ Index, scales = "free_y") +
+  labs(title = "Yearly Analysis of All Indices",
+       x = "Year",
+       y = "Yearly Average") +
+  scale_x_continuous(breaks = unique(data$Year)) + # Ensure all years are shown (~ AI ~)
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1) # Rotate x-axis labels
+  )
+
+
+
+```

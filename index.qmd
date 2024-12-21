@@ -3,31 +3,15 @@ title: "Team Fifth Grades of IE"
 sidebar: false 
 ---
 
-This is our project webpage.
-
-<<<<<<< HEAD
-Please stay tuned to follow our project activities.
-=======
-You can see our project details via this webpage. Please stay tuned to follow our project activities.
->>>>>>> c2164c1b942c12a7a1c9b6a78dad120121b7d1dc
-
 # Team Members
 
 1.  [Gökay Aydoğan](https://github.com/emu-hacettepe-analytics/emu430-fall2024-gokay-aydogan)
 
 2.  [İdil Tokel](https://github.com/emu-hacettepe-analytics/emu430-fall2024-idiltokel)
 
-<<<<<<< HEAD
-3.  Bengü İrem Işık
-
-4.  Atacan Karakaş
-=======
 3.  [Bengü İrem Işık](https://github.com/emu-hacettepe-analytics/emu430-fall2024-benguiirem)
 
 4.  [Atacan Karakaş](https://github.com/emu-hacettepe-analytics/emu430-fall2024-akarakaslab)
->>>>>>> c2164c1b942c12a7a1c9b6a78dad120121b7d1dc
-
-5.  Zeynep Sude Pirim
 
 # Project Topic
 
