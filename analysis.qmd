@@ -2,41 +2,27 @@
 title: "Analysis"
 ---
 
+
 Our analysis will be be based on the data set Economic Confidence Index set published by TUIK. The ECI reflects the general sentiment towards the economy and is composed of various sectoral indices. The dataset spans from 2011 January to 2024 October and provides information on the following indices:
+
 
 -   **Economic Confidence Index**: Represents the overall economic outlook by combining data from multiple sectors.
 
--   **Consumer Confidence Index**: Shows how consumers perceive the current and future state of the economy, their financial situations, and their spending tendencies.
-
--   **Real Sector Confidence Index** : Focuses on the manufacturing industry, providing insights into production levels, new orders, and business expectations.
-
--   **Service Confidence Index**: Highlights the performance and expectations within the service sector.
-
--   **Retail Trade Confidence Index**: Focuses on sales trends, stock levels, and business activity in retail.
-
--   **Construction Confidence Index**: Tracks sentiment in the construction industry, including current order books and employment plans.
-
-This dataset provides a comprehensive view of the Turkish economy through sectoral lenses, making it useful for analyzing trends, comparing sector performance, and evaluating economic resilience over time.
-
-In the data set rows represent the datas of that year with the belongings month, and the columns represent the different indices explained above. The column names are: "Year", "Month", "Economic_Confidence\_ Index", "Consumer_Confidence_Index", "Real_Sector_Confidence_Index", "Services_Confidence_Index", "Retail_Trade_Confidence_Index", "Construction_Confidence_Index."
-
-In the below, you can see the distributions and value types of the datas. We found the variable type by using str() function, and distribution by using
-
-**Year, Month:**
+In the below, you can see the distributions and value types of the datas. We fou
 
 -   **Meaning**: The date when the data was recorded.
 
 -   **Variable Type**: data wa
+-   **Variable Type**: Numeric
 
 -   **Value Distribution**: This column will contain a range of dates from 2007 to 2024, likely with monthly intervals.
 
-1.  **Economic Confidence Index (ECI)**
-
-    -   **Meaning**: The composite index that represents overall economic confidence.
+In the below, you can see the distributions and value types of the datas. We fou
 
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: The values typically range from 0 to 200, with a midpoint of 100, where values above 100 indicate optimism and values below 100 indicate pessimism.
+    -   **Value Distribution**: Normal Distribution
 
 2.  **Consumer Confidence Index (CCI)**
 
@@ -45,6 +31,7 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: Similar to ECI, values generally range between 0 and 200, with a neutral point at 100.
+    -   **Value Distribution**: Normal Distribution
 
 3.  **Real Sector Confidence Index (RSCI)**
 
@@ -53,8 +40,8 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: This index may fluctuate depending on economic conditions, with typical values ranging between 0 and 200, and a neutral value around 100.
-
     The subcomponents of the RSCI are as follows:
+    -   **Value Distribution**: Normal Distribution
 
 4.  **Service Confidence Index**
 
@@ -63,6 +50,7 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: Typically ranges from 0 to 200, with a neutral value at 100.
+    -   **Value Distribution**: Normal Distribution
 
 5.  **Retail Trade Confidence Index (RTCI)**
 
@@ -71,6 +59,7 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: Generally ranges from 0 to 200, with values above 100 indicating optimism about sales and retail activity.
+    -   **Value Distribution**: Normal Distribution
 
 6.  **Construction Confidence Index (CCI)**
 
@@ -79,7 +68,82 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: Similar to other indices, values typically range between 0 and 200, with a neutral value of 100.
+    -   **Value Distribution**: Normal Distribution
+---
 
 ```{r}
-1 + 1
+1+1
+
+# Load necessary libraries
+library(readxl)
+library(dplyr)
+library(ggplot2)
+
+# Load the dataset
+file_path <- file.choose()  # Manually select your file
+data <- read_excel(file_path)
+
+# View the first rows of the data
+head(data)
+
+# Calculate monthly averages
+monthly_averages <- data %>%
+  group_by(Year, Month) %>%
+  summarise(Real_Sector_Avg = mean(Real_Sector_Confidence_Index, na.rm = TRUE))
+
+# View the calculated monthly averages
+head(monthly_averages)
+
+# Calculate monthly averages
+monthly_averages <- data %>%
+  group_by(Year, Month) %>%
+  summarise(Real_Sector_Avg = mean(Real_Sector_Confidence_Index, na.rm = TRUE))
+
+# View the calculated monthly averages
+head(monthly_averages)
+
+# Calculate seasonal averages (average per month across years)
+seasonal_analysis <- data %>%
+  group_by(Month) %>%
+  summarise(Real_Sector_Seasonal_Avg = mean(Real_Sector_Confidence_Index, na.rm = TRUE))
+
+# View the seasonal analysis
+head(seasonal_analysis)
+
+# Calculate yearly averages
+yearly_averages <- data %>%
+  group_by(Year) %>%
+  summarise(Real_Sector_Yearly_Avg = mean(Real_Sector_Confidence_Index, na.rm = TRUE))
+
+# View the yearly averages
+head(yearly_averages)
+
+# Plot yearly averages
+ggplot(yearly_averages, aes(x = Year, y = Real_Sector_Yearly_Avg)) +
+  geom_line(color = "blue") +
+  geom_point(color = "pink") +
+  scale_x_continuous(breaks = seq(min(yearly_averages$Year), max(yearly_averages$Year), by = 1)) +
+  scale_y_continuous(limits = c(floor(min(yearly_averages$Real_Sector_Yearly_Avg)), 
+                                ceiling(max(yearly_averages$Real_Sector_Yearly_Avg)))) +
+  labs(title = "Real Sector Confidence Index - Yearly Average",
+       x = "Year",
+       y = "Average Value") +
+  theme_minimal()
+
+# Plot seasonal analysis
+ggplot(seasonal_analysis, aes(x = Month, y = Real_Sector_Seasonal_Avg)) +
+  geom_line(color = "blue") +
+  geom_point(color = "red") +
+  scale_x_continuous(breaks = seq(1, 12, by = 1)) +
+  scale_y_continuous(limits = c(floor(min(seasonal_analysis$Real_Sector_Seasonal_Avg)), 
+                                ceiling(max(seasonal_analysis$Real_Sector_Seasonal_Avg)))) +
+  labs(title = "Real Sector Confidence Index - Seasonal Average",
+       x = "Month",
+       y = "Average Value") +
+  theme_minimal()
+
+
+
+
+
 ```
