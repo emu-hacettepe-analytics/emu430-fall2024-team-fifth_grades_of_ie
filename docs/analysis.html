@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analysis – FIFTH GRADES OF IE’S LAB</title>
+<title>ANALYSIS – FIFTH GRADES OF IE'S LAB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,7 +149,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview-of-the-data" id="toc-overview-of-the-data" class="nav-link active" data-scroll-target="#overview-of-the-data">Overview of the Data</a></li>
+  <li><a href="#time-series-analysis" id="toc-time-series-analysis" class="nav-link" data-scroll-target="#time-series-analysis">Time Series Analysis</a>
+  <ul class="collapse">
+  <li><a href="#seasonal-analysis" id="toc-seasonal-analysis" class="nav-link" data-scroll-target="#seasonal-analysis">Seasonal Analysis</a></li>
+  <li><a href="#yearly-comparisons" id="toc-yearly-comparisons" class="nav-link" data-scroll-target="#yearly-comparisons">Yearly Comparisons</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -160,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysis</h1>
+<h1 class="title">ANALYSIS</h1>
 </div>
 
 
@@ -177,195 +188,124 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Our analysis will be be based on the data set Economic Confidence Index set published by TUIK. The ECI reflects the general sentiment towards the economy and is composed of various sectoral indices. The dataset spans from 2011 January to 2024 October and provides information on the following indices:</p>
+<section id="overview-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-the-data">Overview of the Data</h2>
+<p>Our analysis will be based on the data set Economic Confidence Index set published by TÜİK. The ECI reflects the general sentiment towards the economy and is composed of various sectoral indices. The data set spans from January 2011 to October 2024 and provides information on the following indices:</p>
 <ul>
-<li><strong>Economic Confidence Index</strong>: Represents the overall economic outlook by combining data from multiple sectors.</li>
+<li><p><strong>Economic Confidence Index (ECI)</strong>: Represents the overall economic outlook by combining data from multiple sectors.</p></li>
+<li><p><strong>Consumer Confidence Index (CCI)</strong>: This shows how consumers perceive the current and future state of the economy, their financial situations, and their spending tendencies.</p></li>
+<li><p><strong>Real Sector Confidence Index (RSCI)</strong>: Focuses on the manufacturing industry, providing insights into production levels, new orders, and business expectations.</p></li>
+<li><p><strong>Service Confidence Index (SCI)</strong>: Highlights the performance and expectations within the service sector.</p></li>
+<li><p><strong>Retail Trade Confidence Index (RTCI)</strong>: Focuses on sales trends, stock levels, and business activity in retail.</p></li>
+<li><p><strong>Construction Confidence Index (CNCI)</strong>: Tracks sentiment in the construction industry, including current order books and employment plans.</p></li>
 </ul>
-<p>In the below, you can see the distributions and value types of the datas. We fou</p>
-<ul>
-<li><p><strong>Meaning</strong>: The date when the data was recorded.</p></li>
-<li><p><strong>Variable Type</strong>: data wa</p></li>
-<li><p><strong>Variable Type</strong>: Numeric</p></li>
-<li><p><strong>Value Distribution</strong>: This column will contain a range of dates from 2007 to 2024, likely with monthly intervals.</p></li>
-</ul>
-<p>In the below, you can see the distributions and value types of the datas. We fou</p>
-<pre><code>-   **Variable Type**: Numeric (Continuous)
-
--   **Value Distribution**: The values typically range from 0 to 200, with a midpoint of 100, where values above 100 indicate optimism and values below 100 indicate pessimism.
--   **Value Distribution**: Normal Distribution</code></pre>
-<ol start="2" type="1">
-<li><p><strong>Consumer Confidence Index (CCI)</strong></p>
-<ul>
-<li><p><strong>Meaning</strong>: A measure of consumers’ confidence about their financial situations and expectations for the economy.</p></li>
-<li><p><strong>Variable Type</strong>: Numeric (Continuous)</p></li>
-<li><p><strong>Value Distribution</strong>: Similar to ECI, values generally range between 0 and 200, with a neutral point at 100.</p></li>
-<li><p><strong>Value Distribution</strong>: Normal Distribution</p></li>
-</ul></li>
-<li><p><strong>Real Sector Confidence Index (RSCI)</strong></p>
-<ul>
-<li><p><strong>Meaning</strong>: Reflects confidence within the real sector, such as production levels, investments, and employment trends in manufacturing.</p></li>
-<li><p><strong>Variable Type</strong>: Numeric (Continuous)</p></li>
-<li><p><strong>Value Distribution</strong>: This index may fluctuate depending on economic conditions, with typical values ranging between 0 and 200, and a neutral value around 100. The subcomponents of the RSCI are as follows:</p></li>
-<li><p><strong>Value Distribution</strong>: Normal Distribution</p></li>
-</ul></li>
-<li><p><strong>Service Confidence Index</strong></p>
-<ul>
-<li><p><strong>Meaning</strong>: Reflects the confidence in the service sector, considering factors like business activity and expectations.</p></li>
-<li><p><strong>Variable Type</strong>: Numeric (Continuous)</p></li>
-<li><p><strong>Value Distribution</strong>: Typically ranges from 0 to 200, with a neutral value at 100.</p></li>
-<li><p><strong>Value Distribution</strong>: Normal Distribution</p></li>
-</ul></li>
-<li><p><strong>Retail Trade Confidence Index (RTCI)</strong></p>
-<ul>
-<li><p><strong>Meaning</strong>: Represents the sentiment in retail trade, including expectations of sales and stock levels.</p></li>
-<li><p><strong>Variable Type</strong>: Numeric (Continuous)</p></li>
-<li><p><strong>Value Distribution</strong>: Generally ranges from 0 to 200, with values above 100 indicating optimism about sales and retail activity.</p></li>
-<li><p><strong>Value Distribution</strong>: Normal Distribution</p></li>
-</ul></li>
-<li><p><strong>Construction Confidence Index (CCI)</strong></p>
-<ul>
-<li><p><strong>Meaning</strong>: Reflects confidence in the construction sector, focusing on current orders and future business activity.</p></li>
-<li><p><strong>Variable Type</strong>: Numeric (Continuous)</p></li>
-<li><p><strong>Value Distribution</strong>: Similar to other indices, values typically range between 0 and 200, with a neutral value of 100.</p></li>
-<li><h2 id="value-distribution-normal-distribution" class="anchored"><strong>Value Distribution</strong>: Normal Distribution</h2></li>
-</ul></li>
-</ol>
+<p>This data set provides a comprehensive view of the Turkish economy through sectoral lenses, making it useful for analyzing trends, comparing sector performance, and evaluating economic resilience over time.</p>
+<p>In the data set rows represent the data of that year with the belongings month, and the columns represent the different indices explained above. The column names are: “Year”, “Month”, “Economic_Confidence_ Index”, “Consumer_Confidence_Index”, “Real_Sector_Confidence_Index”, “Services_Confidence_Index”, “Retail_Trade_Confidence_Index”, “Construction_Confidence_Index.”</p>
+<p>In the below, you can see the distributions and value types of the data. We found the variable type by using the str() function, and the distribution by looking at the histograms of it. You can see the all details about the data in the following table:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 44%">
+<col style="width: 8%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Meaning</th>
+<th>Type</th>
+<th>Value Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Year, Month</td>
+<td>The date when the data was recorded.</td>
+<td><p>Numeric</p>
+<p>(Discrete)</p></td>
+<td>This column will contain a range of dates from 2011 to 2024, likely at monthly intervals.</td>
+</tr>
+<tr class="even">
+<td>Economic Confidence Index (ECI)</td>
+<td>The composite index that represents overall economic confidence.</td>
+<td>Numeric (Continuous)</td>
+<td>Normal Distribution</td>
+</tr>
+<tr class="odd">
+<td>Consumer Confidence Index (CCI)</td>
+<td>A measure of consumers’ confidence about their financial situations and expectations for the economy.</td>
+<td>Numeric (Continuous)</td>
+<td>Normal Distribution</td>
+</tr>
+<tr class="even">
+<td>Real Sector Confidence Index (RSCI)</td>
+<td>Reflects confidence within the real sector, such as production levels, investments, and employment trends in manufacturing.</td>
+<td>Numeric (Continuous)</td>
+<td>Normal Distribution</td>
+</tr>
+<tr class="odd">
+<td>Service Confidence Index (SCI)</td>
+<td>Reflects the confidence in the service sector, considering factors like business activity and expectations.</td>
+<td>Numeric (Continuous)</td>
+<td>Normal Distribution</td>
+</tr>
+<tr class="even">
+<td>Retail Trade Confidence Index (RTCI)</td>
+<td>Represents the sentiment in retail trade, including expectations of sales and stock levels.</td>
+<td>Numeric (Continuous)</td>
+<td>Normal Distribution</td>
+</tr>
+<tr class="odd">
+<td>Construction Confidence Index (CNCI)</td>
+<td>Reflects confidence in the construction sector, focusing on current orders and future business activity.</td>
+<td>Numeric (Continuous)</td>
+<td>Normal Distribution</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="time-series-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="time-series-analysis">Time Series Analysis</h2>
+<section id="seasonal-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="seasonal-analysis">Seasonal Analysis</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Importing the data</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Cleaned_Economic_Confidence_Index_Dataset.csv"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first rows of the data</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Year Month Economic_Confidence_Index Consumer_Confidence_Index
-1 2011     1                  113.9178                  94.44739
-2 2011     2                  112.0710                  96.14788
-3 2011     3                  111.4062                  95.92783
-4 2011     4                  111.7184                  95.80490
-5 2011     5                  112.3256                  95.26634
-6 2011     6                  112.8469                  97.96949
-  Real_Sector_Confidence_Index Services_Confidence_Index
-1                        115.1                  131.1788
-2                        111.2                  129.5531
-3                        111.0                  129.7790
-4                        111.2                  129.7248
-5                        112.4                  130.6081
-6                        111.5                  130.8104
-  Retail_Trade_Confidence_Index Construction_Confidence_Index
-1                      131.4756                     105.72869
-2                      131.2104                     103.94691
-3                      127.8964                      95.62805
-4                      127.3728                     103.57658
-5                      125.7602                     104.95503
-6                      128.3933                     105.28451</code></pre>
-</div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate monthly averages</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>monthly_averages <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year, Month) <span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Real_Sector_Avg =</span> <span class="fu">mean</span>(Real_Sector_Confidence_Index, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the calculated monthly averages</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(monthly_averages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-# Groups:   Year [1]
-   Year Month Real_Sector_Avg
-  &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;
-1  2011     1            115.
-2  2011     2            111.
-3  2011     3            111 
-4  2011     4            111.
-5  2011     5            112.
-6  2011     6            112.</code></pre>
-</div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate monthly averages</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>monthly_averages <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year, Month) <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Real_Sector_Avg =</span> <span class="fu">mean</span>(Real_Sector_Confidence_Index, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the calculated monthly averages</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(monthly_averages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-# Groups:   Year [1]
-   Year Month Real_Sector_Avg
-  &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;
-1  2011     1            115.
-2  2011     2            111.
-3  2011     3            111 
-4  2011     4            111.
-5  2011     5            112.
-6  2011     6            112.</code></pre>
-</div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate seasonal averages (average per month across years)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>seasonal_analysis <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Month) <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Real_Sector_Seasonal_Avg =</span> <span class="fu">mean</span>(Real_Sector_Confidence_Index, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the seasonal analysis</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(seasonal_analysis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 2
-  Month Real_Sector_Seasonal_Avg
-  &lt;dbl&gt;                    &lt;dbl&gt;
-1     1                     105.
-2     2                     106.
-3     3                     105.
-4     4                     103.
-5     5                     104.
-6     6                     104.</code></pre>
-</div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate yearly averages</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>yearly_averages <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year) <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Real_Sector_Yearly_Avg =</span> <span class="fu">mean</span>(Real_Sector_Confidence_Index, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the yearly averages</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(yearly_averages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 2
-   Year Real_Sector_Yearly_Avg
-  &lt;dbl&gt;                  &lt;dbl&gt;
-1  2011                   110.
-2  2012                   107.
-3  2013                   107.
-4  2014                   105.
-5  2015                   103.
-6  2016                   105.</code></pre>
-</div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot yearly averages</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(yearly_averages, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Real_Sector_Yearly_Avg)) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"pink"</span>) <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fu">min</span>(yearly_averages<span class="sc">$</span>Year), <span class="fu">max</span>(yearly_averages<span class="sc">$</span>Year), <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fu">floor</span>(<span class="fu">min</span>(yearly_averages<span class="sc">$</span>Real_Sector_Yearly_Avg)), </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">ceiling</span>(<span class="fu">max</span>(yearly_averages<span class="sc">$</span>Real_Sector_Yearly_Avg)))) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Real Sector Confidence Index - Yearly Average"</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Average Value"</span>) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the dataset</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Cleaned_Economic_Confidence_Index_Dataset.csv"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude 'Year' and 'Month' columns (~ AI ~)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>columns_to_analyze <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(<span class="fu">names</span>(data), <span class="fu">c</span>(<span class="st">"Year"</span>, <span class="st">"Month"</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform seasonal analysis for all columns except 'Year' and 'Month'</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>seasonal_analysis <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Month) <span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(columns_to_analyze), <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape the data for faceted plotting, We learned the use of pivot_longer() function from DataCamp courses.</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>melted_data <span class="ot">&lt;-</span> seasonal_analysis <span class="sc">%&gt;%</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Month, <span class="at">names_to =</span> <span class="st">"Index"</span>, <span class="at">values_to =</span> <span class="st">"Seasonal_Average"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the order of facets to match the order in the Excel file (~ AI ~)</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>melted_data<span class="sc">$</span>Index <span class="ot">&lt;-</span> <span class="fu">factor</span>(melted_data<span class="sc">$</span>Index, <span class="at">levels =</span> columns_to_analyze)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot using faceting to compare seasonal averages of different indices</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(melted_data, <span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Seasonal_Average)) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> Index), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Index, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Seasonal Analysis of All Indices"</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Month"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Seasonal Average"</span>) <span class="sc">+</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2</span>, <span class="dv">12</span>, <span class="at">by =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -374,30 +314,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot seasonal analysis</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(seasonal_analysis, <span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Real_Sector_Seasonal_Avg)) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">12</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fu">floor</span>(<span class="fu">min</span>(seasonal_analysis<span class="sc">$</span>Real_Sector_Seasonal_Avg)), </span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">ceiling</span>(<span class="fu">max</span>(seasonal_analysis<span class="sc">$</span>Real_Sector_Seasonal_Avg)))) <span class="sc">+</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Real Sector Confidence Index - Seasonal Average"</span>,</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Month"</span>,</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Average Value"</span>) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="analysis_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
 </div>
-</div>
-</div>
+<p><em>Initially, we plotted each variable separately. However, we realized that this approach was inefficient, both in terms of space and clarity, as it required extensive code for minimal insight. To address this, we adopted faceting, which allowed us to present all variables in a single, well-organized visualization. This approach significantly improved the efficiency of our analysis, saving both time and space while enhancing interpretability.</em></p>
+<p><em>Our methodology was primarily guided by lecture materials and DataCamp assignments, with occasional assistance from AI tools. We annotated sections of code where AI provided input with the comment “~ AI ~” for transparency.</em></p>
+</section>
+<section id="yearly-comparisons" class="level3">
+<h3 class="anchored" data-anchor-id="yearly-comparisons">Yearly Comparisons</h3>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
