@@ -77,17 +77,17 @@ In the below, you can see the distributions and value types of the datas. We fou
 
         ## **Value Distribution**: Normal Distribution
 
-```{r}
-1+1
+```{r message=FALSE, warning=FALSE}
+#| code-fold: true
+#| code-summary: "Show the code"
 
 # Load necessary libraries
-library(readxl)
+library(readr)
 library(dplyr)
 library(ggplot2)
 
-# Load the dataset
-file_path <- file.choose()  # Manually select your file
-data <- read_excel(file_path)
+#Importing the data
+data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")
 
 # View the first rows of the data
 head(data)
