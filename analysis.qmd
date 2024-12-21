@@ -2,9 +2,7 @@
 title: "Analysis"
 ---
 
-
 Our analysis will be be based on the data set Economic Confidence Index set published by TUIK. The ECI reflects the general sentiment towards the economy and is composed of various sectoral indices. The dataset spans from 2011 January to 2024 October and provides information on the following indices:
-
 
 -   **Economic Confidence Index**: Represents the overall economic outlook by combining data from multiple sectors.
 
@@ -13,16 +11,19 @@ In the below, you can see the distributions and value types of the datas. We fou
 -   **Meaning**: The date when the data was recorded.
 
 -   **Variable Type**: data wa
+
 -   **Variable Type**: Numeric
 
 -   **Value Distribution**: This column will contain a range of dates from 2007 to 2024, likely with monthly intervals.
 
 In the below, you can see the distributions and value types of the datas. We fou
 
-    -   **Variable Type**: Numeric (Continuous)
+```         
+-   **Variable Type**: Numeric (Continuous)
 
-    -   **Value Distribution**: The values typically range from 0 to 200, with a midpoint of 100, where values above 100 indicate optimism and values below 100 indicate pessimism.
-    -   **Value Distribution**: Normal Distribution
+-   **Value Distribution**: The values typically range from 0 to 200, with a midpoint of 100, where values above 100 indicate optimism and values below 100 indicate pessimism.
+-   **Value Distribution**: Normal Distribution
+```
 
 2.  **Consumer Confidence Index (CCI)**
 
@@ -31,6 +32,7 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: Similar to ECI, values generally range between 0 and 200, with a neutral point at 100.
+
     -   **Value Distribution**: Normal Distribution
 
 3.  **Real Sector Confidence Index (RSCI)**
@@ -39,8 +41,8 @@ In the below, you can see the distributions and value types of the datas. We fou
 
     -   **Variable Type**: Numeric (Continuous)
 
-    -   **Value Distribution**: This index may fluctuate depending on economic conditions, with typical values ranging between 0 and 200, and a neutral value around 100.
-    The subcomponents of the RSCI are as follows:
+    -   **Value Distribution**: This index may fluctuate depending on economic conditions, with typical values ranging between 0 and 200, and a neutral value around 100. The subcomponents of the RSCI are as follows:
+
     -   **Value Distribution**: Normal Distribution
 
 4.  **Service Confidence Index**
@@ -50,6 +52,7 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: Typically ranges from 0 to 200, with a neutral value at 100.
+
     -   **Value Distribution**: Normal Distribution
 
 5.  **Retail Trade Confidence Index (RTCI)**
@@ -59,6 +62,7 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: Generally ranges from 0 to 200, with values above 100 indicating optimism about sales and retail activity.
+
     -   **Value Distribution**: Normal Distribution
 
 6.  **Construction Confidence Index (CCI)**
@@ -68,8 +72,10 @@ In the below, you can see the distributions and value types of the datas. We fou
     -   **Variable Type**: Numeric (Continuous)
 
     -   **Value Distribution**: Similar to other indices, values typically range between 0 and 200, with a neutral value of 100.
-    -   **Value Distribution**: Normal Distribution
----
+
+    -   
+
+        ## **Value Distribution**: Normal Distribution
 
 ```{r}
 1+1
