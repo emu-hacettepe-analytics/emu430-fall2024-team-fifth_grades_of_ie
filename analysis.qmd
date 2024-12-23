@@ -24,6 +24,8 @@ In the data set rows represent the data of that year with the belongings month, 
 
 In the below, you can see the distributions and value types of the data. We found the variable type by using the str() function, and the distribution by looking at the histograms of it. You can see the all details about the data in the following table:
 
+ 
+
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+----------------------+-------------------------------------------------------------------------------------------+
 | Variable                             | Meaning                                                                                                                     | Type                 | Value Distribution                                                                        |
 +======================================+=============================================================================================================================+======================+===========================================================================================+
@@ -146,6 +148,16 @@ ggplot(melted_data, aes(x = Year, y = Yearly_Average)) +
 
 ### Comparison of Sub-Indices with Each Other
 
+ 
+
+The purpose of this analysis is to provide a clear and concise representation of the relationships between the selected indices for better interpretation and decision-making.
+
+We aimed to perform a correlation analysis on sub-indices of the Economic Confidence Index to evaluate the strength and direction of their linear relationships.
+
+The results were presented in formatted tables ensuring that the findings are accessible and informative.
+
+*Check the following codes for the correlation matrix:*
+
 ```{r message=FALSE, warning=FALSE}
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -175,4 +187,71 @@ kable(correlation_matrix, format = "html", digits = 2,
   column_spec(2:ncol(correlation_matrix), width = "7em")  # Adjust the width of other columns
 
 
+```
+
+ 
+
+To evaluate these values we used the scale of Pearson correlation coefficients. We analyzed and interpreted the correlation matrix for sub-indices of the Economic Confidence Index using a provided scale to classify the strength of relationships. The analysis involved categorizing the correlation coefficients into predefined ranges (very low, low, moderate, high, and very high correlation) and commenting on the nature of these relationships.
+
+ 
+
+[![](images/The-scale-of-Pearson-correlation-coefficients-40-01.png){height="auto" style="border: 1px solid gray;" fig-alt="We used this scale to make comments on our correlation coefficient values." width="70%"}](https://www.researchgate.net/publication/370300503_Challenges_in_Agile_Software_Maintenance_for_Local_and_Global_Development_An_Empirical_Assessment)
+
+*The scale of Pearson correlation coefficients. Source: [Click here to see the source](https://www.researchgate.net/publication/370300503_Challenges_in_Agile_Software_Maintenance_for_Local_and_Global_Development_An_Empirical_Assessment)*
+
+ 
+
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Pair of Indices                                               | Correlation (r) | Strength (Pearson scale) | Comment                                                                           |
++===============================================================+=================+==========================+===================================================================================+
+| Consumer_Confidence_Index - Real_Sector_Confidence_Index      | 0.27            | Low Correlation          | Minimal linear relationship between these indices.                                |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Consumer_Confidence_Index - Services_Confidence_Index         | 0.40            | Moderate Correlation     | A noticeable but modest positive relationship.                                    |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Consumer_Confidence_Index - Retail_Trade_Confidence_Index     | 0.49            | Moderate Correlation     | Shows a modest alignment, suggesting a slightly stronger relationship.            |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Consumer_Confidence_Index - Construction_Confidence_Index     | 0.54            | Moderate Correlation     | Shows moderate alignment between consumer confidence and construction.            |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Real_Sector_Confidence_Index - Services_Confidence_Index      | 0.72            | High Correlation         | Indicates a strong, meaningful relationship between the real sector and services. |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Real_Sector_Confidence_Index - Retail_Trade_Confidence_Index  | 0.68            | Moderate Correlation     | Shows significant alignment, nearing strong correlation.                          |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Real_Sector_Confidence_Index - Construction_Confidence_Index  | 0.61            | High Correlation         | Suggests a clear relationship between these sectors.                              |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Services_Confidence_Index - Retail_Trade_Confidence_Index     | 0.83            | Very High Correlation    | A very strong positive relationship; these indices are closely linked.            |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Services_Confidence_Index - Construction_Confidence_Index     | 0.70            | High Correlation         | Strong interconnection between services and construction sectors.                 |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+| Retail_Trade_Confidence_Index - Construction_Confidence_Index | 0.73            | High Correlation         | Suggests significant alignment and interdependence.                               |
++---------------------------------------------------------------+-----------------+--------------------------+-----------------------------------------------------------------------------------+
+
+: **Comparing the sub-indices based on correlation values**
+
+ 
+
+```{r message=FALSE, warning=FALSE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(knitr)
+library(corrplot)
+
+# Import the dataset
+data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")
+
+# Exclude 'Year', 'Month', and 'Economic_Confidence_Index' columns
+columns_to_analyze <- setdiff(names(data), c("Year", "Month", "Economic_Confidence_Index"))
+
+colnames(data)[match(columns_to_analyze, colnames(data))] <- c("CCI", "RSCI", "SCI", "RTCI", "CNCI")
+print(colnames(data))
+
+# Create a correlation heatmap
+corrplot(correlation_matrix, method = "color", type = "upper", 
+         tl.col = "black", tl.srt = 45, addCoef.col = "black",
+         title = "Correlation Heatmap of Confidence Indices", 
+         mar = c(0, 0, 2, 0))
 ```
