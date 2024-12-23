@@ -28,9 +28,9 @@ Our main focus is getting economic insights by analyzing Türkiye's economic con
 
         -   **Yearly Comparisons**: Analyze the increases or decreases on an annual basis.
 
--   **Comparison of Sub-Indices**
+-   **Comparison of Indices**
 
-    -   **Objective:** To identify how the Consumer, Real Sector, Services, Retail Trade, and Construction Confidence Indices differ from each other.
+    -   **Objective:** To identify how the Consumer, Real Sector, Services, Retail Trade, and Construction Confidence Indices differ from each other and the Economic Confidence Index.
 
     -   **Method:**
 

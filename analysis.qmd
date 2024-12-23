@@ -141,3 +141,38 @@ ggplot(melted_data, aes(x = Year, y = Yearly_Average)) +
 
 
 ```
+
+## Correlation Analysis
+
+### Comparison of Sub-Indices with Each Other
+
+```{r message=FALSE, warning=FALSE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+
+# Import the dataset
+data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")
+
+# Exclude 'Year', 'Month', and 'Economic_Confidence_Index' columns
+columns_to_analyze <- setdiff(names(data), c("Year", "Month", "Economic_Confidence_Index"))
+
+# Perform correlation analysis using the selected columns
+correlation_matrix <- cor(data[, columns_to_analyze], use = "complete.obs")
+
+# Create a styled table and adjust column widths using column_spec
+kable(correlation_matrix, format = "html", digits = 2, 
+      caption = "Correlation Matrix") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = F) %>%
+  column_spec(1, width = "5em") %>%  # Adjust the width of the first column
+  column_spec(2:ncol(correlation_matrix), width = "7em")  # Adjust the width of other columns
+
+
+```
