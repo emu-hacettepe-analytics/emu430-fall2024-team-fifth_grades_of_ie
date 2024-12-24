@@ -50,6 +50,10 @@ In the below, you can see the distributions and value types of the data. We foun
 
 ### Seasonal Analysis
 
+The purpose of this analysis is to perform seasonal analysis for multiple economic indices and visualize their monthly patterns in a faceted plot. It provides insights into how each index fluctuates over the months of a year.
+
+*Check the following codes for the seasonal analysis line charts:*
+
 ```{r message=FALSE, warning=FALSE}
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -90,13 +94,21 @@ ggplot(melted_data, aes(x = Month, y = Seasonal_Average)) +
   scale_x_continuous(breaks = seq(2, 12, by = 2)) +
   theme_minimal()
 
+#Footnote:
+
+#Initially, we plotted each variable separately. However, we realized that this approach was inefficient, both in terms of space and clarity, as it required extensive code for minimal insight. To address this, we adopted faceting, which allowed us to present all variables in a single, well-organized visualization. This approach significantly improved the efficiency of our analysis, saving both time and space while enhancing interpretability.
+
+#Our methodology was primarily guided by lecture materials and DataCamp assignments, with occasional assistance from AI tools. We annotated sections of code where AI provided input with the comment "~ AI ~" for transparency.
+
 ```
 
-*Initially, we plotted each variable separately. However, we realized that this approach was inefficient, both in terms of space and clarity, as it required extensive code for minimal insight. To address this, we adopted faceting, which allowed us to present all variables in a single, well-organized visualization. This approach significantly improved the efficiency of our analysis, saving both time and space while enhancing interpretability.*
+ 
 
-*Our methodology was primarily guided by lecture materials and DataCamp assignments, with occasional assistance from AI tools. We annotated sections of code where AI provided input with the comment "\~ AI \~" for transparency.*
+### Yearly Analysis
 
-### Yearly Comparisons
+The purpose of this code is to perform a yearly analysis for multiple economic indices and visualize their annual trends using a faceted plot. It helps to identify how each index changes year by year, providing insights into long-term trends and patterns.
+
+*Check the following codes for the yearly analysis line charts:*
 
 ```{r message=FALSE, warning=FALSE}
 #| code-fold: true
@@ -141,14 +153,26 @@ ggplot(melted_data, aes(x = Year, y = Yearly_Average)) +
   )
 
 
+#Footnote:
 
+#Initially, we plotted each variable separately. However, we realized that this approach was inefficient, both in terms of space and clarity, as it required extensive code for minimal insight. To address this, we adopted faceting, which allowed us to present all variables in a single, well-organized visualization. This approach significantly improved the efficiency of our analysis, saving both time and space while enhancing interpretability.
+
+#Our methodology was primarily guided by lecture materials and DataCamp assignments, with occasional assistance from AI tools. We annotated sections of code where AI provided input with the comment "~ AI ~" for transparency.
 ```
+
+The yearly analysis of six confidence indices reveals key trends and sectoral distinctions, providing valuable insights into the broader economic landscape. Across all sectors, a general decline is observed from 2011 to 2020, with 2020 marking the lowest point due to the significant disruptions caused by the COVID-19 pandemic. However, the recovery patterns vary across sectors, highlighting their unique dynamics and resilience.
+
+The Economic Confidence Index and Consumer Confidence Index both exhibit a steady downward trend over the years. While the Economic Confidence Index shows a slight stabilization after 2021, the Consumer Confidence Index maintains a relatively lower and flatter trend post2020, indicating continued challenges in restoring consumer sentiment.
+
+The Real Sector Confidence Index shows more pronounced fluctuations compared to other indices, with brief recoveries in 2017-2018. However, it experiences a sharp decline in 2020, followed by a gradual downturn in subsequent years. Similarly, the Construction Confidence Index follows a steady and significant decline from 2011 to 2020, with a modest recovery post2021 that remains below historical levels, reflecting structural weaknesses in the sector.
+
+Among the indices, the Services Confidence Index displays a marked recovery after the sharp dip in 2020, indicating a higher level of adaptability and resilience in this sector. In contrast, the Retail Trade Confidence Index showing smaller fluctuations compared to other indices. However, its recovery after 2020 remains modest and less pronounced compared to the services sector.
+
+The pandemic's impact is most evident in 2020, where all indices reached their lowest points, but the recovery paths diverge significantly. The services sector shows the fastest recovery, underscoring its resilience, while the construction sector struggles to regain momentum. The overall trends highlight the importance of tailoring sector-specific policies, with a focus on supporting struggling sectors like construction while leveraging the recovery potential of resilient ones like services. This comparative analysis offers a comprehensive basis for informed policymaking and targeted economic strategies in the post-pandemic era.
 
 ## Correlation Analysis
 
 ### Comparison of Sub-Indices with Each Other
-
- 
 
 The purpose of this analysis is to provide a clear and concise representation of the relationships between the selected indices for better interpretation and decision-making.
 
@@ -229,7 +253,7 @@ To evaluate these values we used the scale of Pearson correlation coefficients. 
 
  
 
-To visualize our correlation values, we created a correlation heatmap. It provides a quick, visual summary of the strength and direction of relationships between variables.
+We created a correlation heatmap to visualize our correlation values. It provides a quick, visual summary of the strength and direction of relationships between variables.
 
 *Check the following codes for the correlation heatmap:*
 
@@ -268,3 +292,109 @@ This analysis can help prioritize which indices to focus on for understanding se
  
 
 ### Comparison of Sub-Indices with the ECI
+
+ 
+
+The purpose of analyzing correlations between the Economic Confidence Index (ECI) and its sub-indices is to gain insights into the relationships and dynamics between overall economic confidence and specific sectors or components of the economy.
+
+*Check the following codes for the correlation matrix:*
+
+```{r message=FALSE, warning=FALSE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+library(corrplot)
+
+# Import the dataset
+data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")
+
+# Select relevant columns
+selected_data <- data[, c("Economic_Confidence_Index", 
+                          "Consumer_Confidence_Index", 
+                          "Real_Sector_Confidence_Index", 
+                          "Services_Confidence_Index", 
+                          "Retail_Trade_Confidence_Index", 
+                          "Construction_Confidence_Index")]
+
+# Compute correlation matrix
+cor_matrix <- cor(selected_data, use = "complete.obs")
+
+# Extract correlations with Economic Confidence Index
+economic_confidence_correlations <- cor_matrix["Economic_Confidence_Index", ]
+
+# Print the results
+kable(economic_confidence_correlations, caption = "Correlations with Economic Confidence Index")
+
+
+```
+
+ 
+
+*We evaluated the correlation results in the following table:*
+
++-------------------------------+-----------------+--------------------------+--------------------------------------------------------------------------------------------+
+| Sub-Index                     | Correlation (r) | Strength (Pearson Scale) | Comment                                                                                    |
++===============================+=================+==========================+============================================================================================+
+| Consumer Confidence Index     | 0.631           | High correlation         | Indicates a significant influence of consumer sentiment on economic confidence.            |
++-------------------------------+-----------------+--------------------------+--------------------------------------------------------------------------------------------+
+| Real Sector Confidence Index  | 0.840           | Very high correlation    | Highlights the strong impact of the real sector (e.g., manufacturing, industry).           |
++-------------------------------+-----------------+--------------------------+--------------------------------------------------------------------------------------------+
+| Services Confidence Index     | 0.915           | Very high correlation    | Shows that the services sector is a major driver of overall economic confidence.           |
++-------------------------------+-----------------+--------------------------+--------------------------------------------------------------------------------------------+
+| Retail Trade Confidence Index | 0.860           | Very high correlation    | Suggests that retail trade has a substantial role in shaping economic sentiment.           |
++-------------------------------+-----------------+--------------------------+--------------------------------------------------------------------------------------------+
+| Construction Confidence Index | 0.797           | High correlation         | Reflects a significant, though slightly less dominant, influence of construction activity. |
++-------------------------------+-----------------+--------------------------+--------------------------------------------------------------------------------------------+
+
+ 
+
+We created a correlation bar chart to visualize the correlation values between the Economic Confidence Index and its sub-indices. This chart provides a clearer and more understandable representation of the values in numerical order.
+
+*Check the following codes for the correlation bar chart:*
+
+```{r message=FALSE, warning=FALSE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+# Load necessary libraries
+library(ggplot2)
+
+# Select relevant columns
+selected_data <- data[, c("Economic_Confidence_Index", 
+                          "Consumer_Confidence_Index", 
+                          "Real_Sector_Confidence_Index", 
+                          "Services_Confidence_Index", 
+                          "Retail_Trade_Confidence_Index", 
+                          "Construction_Confidence_Index")]
+
+# Compute correlation matrix
+cor_matrix <- cor(selected_data, use = "complete.obs")
+
+# Extract correlations with Economic Confidence Index
+economic_confidence_correlations <- cor_matrix["Economic_Confidence_Index", ]
+
+# Convert to a data frame for visualization
+cor_df <- data.frame(
+  Sub_Index = names(economic_confidence_correlations),
+  Correlation = economic_confidence_correlations
+)
+
+# Create a bar plot of the correlations
+ggplot(cor_df[-1, ], aes(x = reorder(Sub_Index, Correlation), y = Correlation)) + # Remove self-correlation (index 1)
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() + # Flip the coordinates for better readability
+  theme_minimal() +
+  labs(title = "Correlations with Economic Confidence Index",
+       x = "Sub-Indices",
+       y = "Correlation") +
+  geom_text(aes(label = round(Correlation, 2)), hjust = 1.2, color = "white")
+
+```
+
+ 
+
+The services, retail trade, and real sectors are the primary contributors to economic confidence, with their high and very high correlations suggesting they should be prioritized in policy and business strategies.
+
+Construction activity also plays a meaningful role in shaping economic sentiment.
+
+While consumer confidence is important, its impact is slightly lower compared to other sub-indices, suggesting its influence on economic confidence might be indirect or mediated by other sectors.
