@@ -229,6 +229,10 @@ To evaluate these values we used the scale of Pearson correlation coefficients. 
 
  
 
+To visualize our correlation values, we created a correlation heatmap. It provides a quick, visual summary of the strength and direction of relationships between variables.
+
+*Check the following codes for the correlation heatmap:*
+
 ```{r message=FALSE, warning=FALSE}
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -246,12 +250,21 @@ data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")
 # Exclude 'Year', 'Month', and 'Economic_Confidence_Index' columns
 columns_to_analyze <- setdiff(names(data), c("Year", "Month", "Economic_Confidence_Index"))
 
-colnames(data)[match(columns_to_analyze, colnames(data))] <- c("CCI", "RSCI", "SCI", "RTCI", "CNCI")
-print(colnames(data))
-
 # Create a correlation heatmap
 corrplot(correlation_matrix, method = "color", type = "upper", 
          tl.col = "black", tl.srt = 45, addCoef.col = "black",
          title = "Correlation Heatmap of Confidence Indices", 
          mar = c(0, 0, 2, 0))
 ```
+
+In conclusion, the strongest relationships exist between indices related to services, retail trade, and construction. These sectors appear highly interconnected, reflecting their mutual influence on overall economic confidence.
+
+Consumer Confidence Index has weaker correlations with other indices, indicating it is influenced by broader, possibly external factors rather than being directly tied to specific economic sectors.
+
+The alignment of the real sector with services and retail trade suggests that these are key drivers of economic activity.
+
+This analysis can help prioritize which indices to focus on for understanding sectoral interdependencies and guiding economic policy or decision-making.
+
+ 
+
+### Comparison of Sub-Indices with the ECI
