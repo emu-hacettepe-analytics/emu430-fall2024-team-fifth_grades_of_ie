@@ -1,7 +1,12 @@
 ---
-title: "Team Fifth Grades of IE"
+title: <p align="center"> TEAM FIFTH GRADES OF IE </p>
+
 sidebar: false 
 ---
+
+::: {style="text-align: center;"}
+![](images/home.png){fig-align="center"}
+:::
 
 # Team Members
 
@@ -12,6 +17,8 @@ sidebar: false
 3.  [Bengü İrem Işık](https://github.com/emu-hacettepe-analytics/emu430-fall2024-benguiirem)
 
 4.  [Atacan Karakaş](https://github.com/emu-hacettepe-analytics/emu430-fall2024-akarakaslab)
+
+5.  [Zeynep Sude Pirim](https://github.com/emu-hacettepe-analytics/emu430-fall2024-zeysu53)
 
 # Project Topic
 
