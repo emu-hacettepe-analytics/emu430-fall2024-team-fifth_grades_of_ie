@@ -24,6 +24,8 @@ website:
   page-footer:
     center: "Hacettepe IE - EMU 430 - Fall 2024" 
     border: true
+
+prefer-html: true
 format:
   html:
     toc: true
@@ -32,6 +34,7 @@ format:
       light: simplex 
       dark: cyborg
     css: styles.css
+
 
 
 editor: visual

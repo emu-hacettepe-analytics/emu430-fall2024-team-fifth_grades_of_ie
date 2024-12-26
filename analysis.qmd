@@ -59,10 +59,12 @@ The purpose of this analysis is to perform seasonal analysis for multiple econom
 #| code-summary: "Show the code"
 
 # Load necessary libraries
+
 library(readr)
 library(dplyr)
 library(ggplot2)
 library(knitr)
+library(kableExtra)
 library(tidyr)
 
 # Import the dataset
@@ -102,23 +104,17 @@ ggplot(melted_data, aes(x = Month, y = Seasonal_Average)) +
 
 The seasonal analysis shown in the provided graphs highlights the monthly variations in multiple confidence indices across different sectors. Here's an interpretation of each index based on the graph's trends:
 
-**Economic Confidence Index:**
-The index significantly drops close to April (Month 4), with a gradual ascent up to December. This suggests a seasonal dip, potentially due to external economic or market-specific causes that stabilize later in the year.
+**Economic Confidence Index:** The index significantly drops close to April (Month 4), with a gradual ascent up to December. This suggests a seasonal dip, potentially due to external economic or market-specific causes that stabilize later in the year.
 
-**Consumer Confidence Index:**
-The index shows a relatively stable trend but retreats slightly in the middle of the year, especially over the summer months. In this regard, consumer confidence is susceptible to financial challenges or changes that may occur mid-year.
+**Consumer Confidence Index:** The index shows a relatively stable trend but retreats slightly in the middle of the year, especially over the summer months. In this regard, consumer confidence is susceptible to financial challenges or changes that may occur mid-year.
 
-**Real Sector Confidence Index:**
-There is a sharp fall around April that almost mirrors the trend in the Economic Confidence Index, suggesting a link with broader economic trends and real-sector activity levels. The bounce-back in the latter part of the year implies improved performance or resolution of early challenges.
+**Real Sector Confidence Index:** There is a sharp fall around April that almost mirrors the trend in the Economic Confidence Index, suggesting a link with broader economic trends and real-sector activity levels. The bounce-back in the latter part of the year implies improved performance or resolution of early challenges.
 
-**Services Confidence Index:**
-Confidence exhibits a marked drop early in the year but then sees a strong recovery through the remainder of the year, exhibiting steady growth. This may indicate seasonal variation in service demand.
+**Services Confidence Index:** Confidence exhibits a marked drop early in the year but then sees a strong recovery through the remainder of the year, exhibiting steady growth. This may indicate seasonal variation in service demand.
 
-**Retail Trade Confidence Index:**
-The retail index also mirrors a similar trend as that of the Services Index—a slump in the early months followed by a steady climb upward. This aligns with consumer behavior, where retail activity picks up after initial low seasons.
+**Retail Trade Confidence Index:** The retail index also mirrors a similar trend as that of the Services Index—a slump in the early months followed by a steady climb upward. This aligns with consumer behavior, where retail activity picks up after initial low seasons.
 
-**Construction Confidence Index:**
-The most pronounced seasonality is observed here, with a slump in March-April (Months 3-4) and then a recovery that plateaus in the second half of the year. This may be due to seasonal influences, like weather conditions affecting construction activities.
+**Construction Confidence Index:** The most pronounced seasonality is observed here, with a slump in March-April (Months 3-4) and then a recovery that plateaus in the second half of the year. This may be due to seasonal influences, like weather conditions affecting construction activities.
 
 In conclusion, dips in the indices around the beginning of the year, especially March-April, indicate sector-wide impacts, possibly due to seasonal slowdowns or economic cycles. Recovery toward the end of the year in most indices suggests either resilience or increased activity due to year-end planning and execution. These trends can guide strategic planning and help businesses prepare for periods of low confidence and adjust their strategies accordingly.
 
@@ -139,6 +135,8 @@ library(readr)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(knitr)
+library(kableExtra)
 
 # Import the dataset
 data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")
@@ -288,6 +286,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(knitr)
+library(kableExtra)
 library(corrplot)
 
 # Import the dataset
@@ -307,7 +306,7 @@ corrplot(correlation_matrix, method = "color", type = "upper",
 
 [^4]: We got help from AI tools to create correlation heatmap.
 
-In conclusion, the strongest relationships exist between indices related to services, retail trade, and construction. These sectors appear highly interconnected, reflecting their mutual influence on overall economic confidence.
+In conclusion, the strongest positive relationships exist between indices related to services, retail trade, and construction. These sectors appear highly interconnected, reflecting their mutual influence on overall economic confidence.
 
 Consumer Confidence Index has weaker correlations with other indices, indicating it is influenced by broader, possibly external factors rather than being directly tied to specific economic sectors.
 
@@ -328,6 +327,11 @@ The purpose of analyzing correlations between the Economic Confidence Index (ECI
 #| code-summary: "Show the code"
 
 library(corrplot)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
 
 # Import the dataset
 data <- read.csv("Cleaned_Economic_Confidence_Index_Dataset.csv")

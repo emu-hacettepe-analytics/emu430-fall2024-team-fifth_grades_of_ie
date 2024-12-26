@@ -1,6 +1,5 @@
 ---
 title: <p align="center"> TEAM FIFTH GRADES OF IE </p>
-
 sidebar: false 
 ---
 
@@ -10,16 +9,20 @@ sidebar: false
 
 # Team Members
 
-1.  [Gökay Aydoğan](https://github.com/emu-hacettepe-analytics/emu430-fall2024-gokay-aydogan)
+1.  [**Gökay Aydoğan**](https://github.com/emu-hacettepe-analytics/emu430-fall2024-gokay-aydogan)
 
-2.  [İdil Tokel](https://github.com/emu-hacettepe-analytics/emu430-fall2024-idiltokel)
+2.  [**İdil Tokel**](https://github.com/emu-hacettepe-analytics/emu430-fall2024-idiltokel)
 
-3.  [Bengü İrem Işık](https://github.com/emu-hacettepe-analytics/emu430-fall2024-benguiirem)
+3.  [**Bengü İrem Işık**](https://github.com/emu-hacettepe-analytics/emu430-fall2024-benguiirem)
 
-4.  [Atacan Karakaş](https://github.com/emu-hacettepe-analytics/emu430-fall2024-akarakaslab)
+4.  [**Atacan Karakaş**](https://github.com/emu-hacettepe-analytics/emu430-fall2024-akarakaslab)
 
-5.  [Zeynep Sude Pirim](https://github.com/emu-hacettepe-analytics/emu430-fall2024-zeysu53)
+5.  [**Zeynep Sude Pirim**](https://github.com/emu-hacettepe-analytics/emu430-fall2024-zeysu53)
 
 # Project Topic
 
+### Analyzing Türkiye's Economic Confidence Index and Sub-Indices (2011-2024): Insights into Economic Trends and Implications
+
 # Data Set
+
+### **Data Source:** [Ekonomik Güven Endeksi, TÜİK](https://data.tuik.gov.tr/Bulten/Index?p=Ekonomik-Guven-Endeksi-Ekim-2024-53597)
